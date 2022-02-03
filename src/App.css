@@ -1,4 +1,11 @@
 svg {
+  display: block;
+  margin: auto;
   background: #eee;
   overflow: visible;
 }
+
+button {
+  display:block;
+  margin:auto;
+} 
