@@ -2,6 +2,11 @@ import React, { useRef, useEffect, useState } from "react";
 import "./App.css";
 import { select, axisBottom, axisRight, scaleLinear, scaleBand } from "d3";
 
+const book1Citations = {"kit":{"book": "2010", "book2": "2011"}, "mat":{"other book": "2011"}}
+const book2Citations = {"kit":{"book": "2010"}, "pam":{"another book": "2009"}}
+
+//Formatting function start here
+
 function App() {
   const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75]);
   const svgRef = useRef();
