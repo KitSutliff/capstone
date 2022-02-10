@@ -2,13 +2,58 @@ import React, { useRef, useEffect, useState } from "react";
 import "./App.css";
 import { select, axisBottom, axisRight, scaleLinear, scaleBand } from "d3";
 
-const book1Citations = {"kit":{"book": "2010", "book2": "2011"}, "mat":{"other book": "2011"}}
-const book2Citations = {"kit":{"book": "2010"}, "pam":{"another book": "2009"}}
+// const book1Citations = {"kit":{"book": "2010", "book2": "2011"}, "mat":{"other book": "2011"}}
+// const book2Citations = {"kit":{"book": "2010"}, "pam":{"another book": "2009"}}
 
-//Formatting function start here
+const list1 = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+const list2 = ["a", "b", "c", "d", "j", "k", "l", "m", "n", "o", "p", "q"]
+
+//data formatting function start here
+
+// function test(testArr1, testArr2) {
+//   for(let i = 0; i < companies.length; i++) {
+//     if (testArr1[i]){
+//       in testArr2
+
+// }
+
+function listShares(list1, list2){
+
+    let list1Uniques = []
+    let list2Uniques = []
+    let listShared = []
+
+    //for item in  in list1:
+    
+    for(let i = 0; i < list1.length; i++) {
+
+        //if item in list2:
+
+        if (list2.includes(list1[i])) {
+            //add item to listShared
+            listShared.push(list1[i])
+        }
+        else {
+            list1Uniques.push(list1[i])
+        };
+    };
+
+    for(let i = 0; i < list2.length; i++) {
+
+        if (!list1.includes(list2[i])) {
+            list2Uniques.push(list2[i])
+        }
+    }
+
+    return [list1Uniques.length,list2Uniques.length,listShared.length];
+};
+
+//data formatting function end
+
+const mcguffin = listShares(list1, list2)
 
 function App() {
-  const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75]);
+  const [data, setData] = useState(mcguffin);
   const svgRef = useRef();
 
   // will be called initially and on every data change

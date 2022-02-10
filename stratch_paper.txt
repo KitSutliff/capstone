@@ -1,0 +1,49 @@
+1 write out in python
+
+list1 = 
+
+function listShares(list1, list2){}
+
+    const list1Uniques = []
+    const list1Uniques = []
+    const listShared = []
+
+    //for item in  in list1:
+    
+    for(let i = 0; i < list1.length; i++) {
+
+        //if item in list2:
+
+        if list2.includes(list1[i]) {
+            //add item to listShared
+            listShared.push(list1[i])
+        };
+        else {
+            list1Uniques.push(list1[i])
+        };
+    };
+
+    for(let i = 0; i < list2.length; i++) {
+
+        if !list1.includes(list2[i]) {
+            list2Uniques.push(list2[i])
+
+        }
+    };
+
+    return [len(list1Uniques),len(list2Uniques),len(listShared)];
+};
+
+2 reformat as javascript
+
+    Using simple list of strings
+
+3 assign constants to relevant elements
+
+    displays bar graph of 3 elements from 2 arrays on page load
+
+4 animate an on click feature
+
+    a bit more fiddling
+
+5 style
