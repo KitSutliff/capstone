@@ -5,42 +5,34 @@ import { select, axisBottom, axisRight, scaleLinear, scaleBand } from "d3";
 // const book1Citations = {"kit":{"book": "2010", "book2": "2011"}, "mat":{"other book": "2011"}}
 // const book2Citations = {"kit":{"book": "2010"}, "pam":{"another book": "2009"}}
 
-const list1 = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
-const list2 = ["a", "b", "c", "d", "j", "k", "l", "m", "n", "o", "p", "q"]
+const list1 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "q", "1", "2", "3"]
+const list2 = ["a", "b", "c", "d", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t"]
 
-//data formatting function start here
-
-// function test(testArr1, testArr2) {
-//   for(let i = 0; i < companies.length; i++) {
-//     if (testArr1[i]){
-//       in testArr2
-
-// }
+const listLengths = [list1.length, list2.length]
 
 function listShares(list1, list2){
-
     let list1Uniques = []
     let list2Uniques = []
     let listShared = []
 
     //for item in  in list1:
-    
     for(let i = 0; i < list1.length; i++) {
 
         //if item in list2:
-
         if (list2.includes(list1[i])) {
             //add item to listShared
             listShared.push(list1[i])
         }
+        //add item to list1Uniques
         else {
             list1Uniques.push(list1[i])
         };
     };
-
+    //for item in  in list2:
     for(let i = 0; i < list2.length; i++) {
-
+        //if item not in list1:
         if (!list1.includes(list2[i])) {
+            //add item to list2Uniques
             list2Uniques.push(list2[i])
         }
     }
@@ -48,12 +40,10 @@ function listShares(list1, list2){
     return [list1Uniques.length,list2Uniques.length,listShared.length];
 };
 
-//data formatting function end
-
-const mcguffin = listShares(list1, list2)
+// const mcguffin = listShares(list1, list2)
 
 function App() {
-  const [data, setData] = useState(mcguffin);
+  const [data, setData] = useState(listLengths);
   const svgRef = useRef();
 
   // will be called initially and on every data change
@@ -66,11 +56,13 @@ function App() {
       .range([0, 300])
       .padding(0.5);
 
-    const yScale = scaleLinear().domain([0, 150]).range([150, 0]);
+    const yScale = scaleLinear()
+      .domain([0, 20])
+      .range([150, 0]);
 
     const colorScale = scaleLinear()
-      .domain([75, 100, 150])
-      .range(["green", "orange", "red"])
+      .domain([3, 6, 15])
+      .range(["orange", "yellow", "green"])
       .clamp(true);
 
     // create x-axis
@@ -122,17 +114,20 @@ function App() {
         <g className="x-axis" />
         <g className="y-axis" />
       </svg>
-      <button onClick={() => setData(data.map((value) => value + 5))}>
-        Update data
+      <button onClick={() => setData(listShares(list1, list2))}>
+        Filter Shared
       </button>
-      <button onClick={() => setData(data.filter((value) => value < 35))}>
+      <button onClick={() => setData(listLengths)}>
+        Reset data
+      </button>
+        {/* <button onClick={() => setData(data.filter((value) => value < 35))}>
         Filter data
       </button>
       <button
-        onClick={() => setData([...data, Math.round(Math.random() * 100)])}
-      >
+        onClick={() => setData([...data, Math.round(Math.random() * 100)])}>
         Add data
-      </button>
+      </button> */}
+     
     </React.Fragment>
   );
 }
