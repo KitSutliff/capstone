@@ -1,3 +1,10 @@
+desciption:
+
+This app allows a user to input two lists and recieve a bar chart visualization of that data.  
+
+Clicking a button filters the shared elements of each list and creates a new third list containing the shared elements.  The visualizer animates this on the bar chart.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
