@@ -1,32 +1,29 @@
-Project Proposal - Kit Sutliff
+Project Overview - Kit Sutliff
 
-Learning Goals
-    Simple analysis and visualization using industry standard tools
+Project Goals:
 
-Description
-     Users will be able to input the 'works cited' sections from multiple books using BibTex and the app will create a visualization of which shared sources accross books and which sources are unique to each book
+Prototype a tool that would allow a researcher to input a data set containing two lists and see, at a glance,       how many elements are shared across both list and how many are unique to each list.
 
-Tech Stack
-    HTML
-    CSS
-    Javascript
-    D3
-    BibTex
-    Google Books
-    Flask
-    Heroku
+One example of a use for a tool like this would be to input the lists of subscribers to two separate youtube       content creators.  The researcher would be able to quickly determine the extent to which their audience is shared   and which creator has the most unique users.
 
-Features
-    1) Users input a data set of a sources and and their citations.
 
-        The program analyzes the sources and outputs two lists:
-            -citations are shared between the sources
-            -citations unique to each source
+Description:
 
-    2) Visualization of shared versus unique soruces.
+Users are able to input two lists.  The app will automatically generate a color coded bar chart compairing the    two lists by volume.  A user can click a button and the app will automatically filter all common elements out     of each list into a third list which is also color coded and animatied on the chart.
 
-    3) Stretch goal: Users can save and export their data sets/visualizations.
+Tech Stack:
 
-    3) Stretch goal: Visualized timeline of sources.
+HTML    
+CSS    
+Javascript  
+D3  
+Flask   
+Heroku  
 
-    4) Stretch Goal: Visualization of sources ranked by frequency of use within a set of books.
+Features:    
+1) Users input a data set containing two lists. 
+    The program analyzes the sources and outputs two lists:     
+        - elements that are shared between the sources  
+        - elements that are unique to each list
+
+2) Visualization of elements shared across both lists versus those unique to each list.
