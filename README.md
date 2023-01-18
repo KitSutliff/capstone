@@ -26,4 +26,4 @@ Features:
         - elements that are shared between the sources  
         - elements that are unique to each list
 
-2) Visualization of elements shared across both lists versus those unique to each list.
+2) Color coded dynamic animated visualization of elements shared across both lists versus those unique to each list.
