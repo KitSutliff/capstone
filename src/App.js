@@ -18,7 +18,6 @@ function listShares(list1, list2){
 
     //for item in  in list1:
     for(let i = 0; i < list1.length; i++) {
-
         //if item in list2:
         if (list2.includes(list1[i])) {
             //add item to listShared
@@ -61,10 +60,9 @@ function App() {
       .range([150, 0]);
 
     // sets colors and color scales
-
     const colorScale = scaleLinear()
       .domain([3, 6, 15])
-      .range(["orange", "yellow", "green"])
+      .range(["red", "purple", "blue"])
       .clamp(true);
 
     // creates x-axis
